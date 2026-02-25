@@ -13,11 +13,11 @@ class Config():
 
         # PATH settings
         # Make up your file system as: SYS_HOME_DIR/codes/dis/BiRefNet, SYS_HOME_DIR/datasets/dis/xx, SYS_HOME_DIR/weights/xx
-        self.sys_home_dir = [os.path.expanduser('~'), '/workspace'][1]   # Default, custom
+        self.sys_home_dir = [os.path.expanduser('~'), '/workspace', '/root/workspace/BiRefNet-Training'][2]   # Default, custom
         self.data_root_dir = os.path.join(self.sys_home_dir, 'datasets/dis')
 
         # TASK settings
-        self.task = ['DIS5K', 'COD', 'HRSOD', 'General', 'General-2K', 'Matting'][0]
+        self.task = ['DIS5K', 'COD', 'HRSOD', 'General', 'General-2K', 'Matting'][5]
         self.testsets = {
             # Benchmarks
             'DIS5K': ','.join(['DIS-VD', 'DIS-TE1', 'DIS-TE2', 'DIS-TE3', 'DIS-TE4'][:1]),
