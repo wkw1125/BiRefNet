@@ -9,7 +9,7 @@ case "${task}" in
     'HRSOD') epochs=150 && val_last=50 && step=5 ;;
     'General') epochs=200 && val_last=50 && step=5 ;;
     'General-2K') epochs=250 && val_last=30 && step=2 ;;
-    'Matting') epochs=150 && val_last=50 && step=5 ;;
+    'Matting') epochs=150 && val_last=500 && step=50 ;;
 esac
 
 # Train
