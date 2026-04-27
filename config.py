@@ -18,6 +18,8 @@ class Config():
 
         # TASK settings
         self.task = ['DIS5K', 'COD', 'HRSOD', 'General', 'General-NP', 'General-2K', 'Matting'][3]
+        print('task:', self.task)
+
         self.testsets = {
             # Benchmarks
             'DIS5K': ','.join(['DIS-VD', 'DIS-TE1', 'DIS-TE2', 'DIS-TE3', 'DIS-TE4'][:1]),
