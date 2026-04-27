@@ -17,7 +17,7 @@ class Config():
         self.data_root_dir = os.path.join(self.sys_home_dir, 'datasets/dis')
 
         # TASK settings
-        self.task = ['DIS5K', 'COD', 'HRSOD', 'General', 'General-2K', 'Matting'][3]
+        self.task = ['DIS5K', 'COD', 'HRSOD', 'General', 'General-NP', 'General-2K', 'Matting'][3]
         self.testsets = {
             # Benchmarks
             'DIS5K': ','.join(['DIS-VD', 'DIS-TE1', 'DIS-TE2', 'DIS-TE3', 'DIS-TE4'][:1]),
@@ -25,6 +25,7 @@ class Config():
             'HRSOD': ','.join(['DAVIS-S', 'TE-HRSOD', 'TE-UHRSD', 'DUT-OMRON', 'TE-DUTS']),
             # Practical use
             'General': ','.join(['DIS-VD', 'TE-P3M-500-NP']),
+            'General-NP': ','.join(['DIS-VD', 'TE-P3M-500-NP']),
             'General-2K': ','.join(['DIS-VD', 'TE-P3M-500-NP']),
             'Matting': ','.join(['TE-P3M-500-NP', 'TE-AM-2k']),
         }[self.task]
@@ -34,6 +35,7 @@ class Config():
             'COD': 'TR-COD10K+TR-CAMO',
             'HRSOD': ['TR-DUTS', 'TR-HRSOD', 'TR-UHRSD', 'TR-DUTS+TR-HRSOD', 'TR-DUTS+TR-UHRSD', 'TR-HRSOD+TR-UHRSD', 'TR-DUTS+TR-HRSOD+TR-UHRSD'][5],
             'General': datasets_all,
+            'General-NP': datasets_all,
             'General-2K': datasets_all,
             'Matting': datasets_all,
         }[self.task]
@@ -70,6 +72,7 @@ class Config():
                 'COD': -20,
                 'HRSOD': -20,
                 'General': -20,
+                'General-NP': -20,
                 'General-2K': -20,
                 'Matting': -10,
             }[self.task]
@@ -134,7 +137,7 @@ class Config():
                 'cnt': 5 * 0,
                 'structure': 5 * 0,
             }
-        elif self.task in ['General', 'General-2K']:
+        elif self.task in ['General', 'General-NP', 'General-2K']:
             self.lambdas_pix_last = {
                 'bce': 30 * 1,
                 'iou': 0.5 * 1,
