@@ -17,7 +17,7 @@ class Config():
         self.data_root_dir = os.path.join(self.sys_home_dir, 'datasets/dis')
 
         # TASK settings
-        self.task = ['DIS5K', 'COD', 'HRSOD', 'General', 'General-NP', 'General-2K', 'Matting'][3]
+        self.task = ['DIS5K', 'COD', 'HRSOD', 'General', 'General-NP', 'General-2K', 'Matting'][6]
         print('task:', self.task)
 
         self.testsets = {
